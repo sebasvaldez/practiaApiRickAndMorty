@@ -13,9 +13,53 @@
     <title>API Rick&Morty</title>
   </head>
   <body>
+    <h1 class="text-center my-5">API Rick and Morty</h1>
+
+    <section class="container my-5" id="carousel-dinamico">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./images/Supernova.jpeg" class=" d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item ">
+            <img
+              src="./images/Devrah.jpeg"
+              class=" d-block w-100 "
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img src="./images/Terry.jpeg" class=" d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
     <div class="container my-5">
       <!-- Spinner cargando -->
-      <section class="d-flex align-items-center d-none " id="loading">
+      <section class="d-flex align-items-center d-none" id="loading">
         <strong>Cargando...</strong>
         <div
           class="spinner-border ms-auto"
@@ -24,29 +68,20 @@
         ></div>
       </section>
 
-      <section class="row" id="card-dinamicas">
-
-          
-    </section>
-    <template id="template-card">
-      <article class="col-12 col-md-6 col-lg-3 mb-3">
-        <div class="card text-center shadow">
-          <img src="" alt="" class="card-img-top" />
-          <div class="card-body">
-            <h5 class="card-title text-primary lead">
-              Nombre del personaje
-            </h5>
-            <p id="p1" lead text-secondary>Human</p>
-            <p id="p2">Tierra de origen</p>
-
+      <section class="row" id="card-dinamicas"></section>
+      <template id="template-card">
+        <article class="col-12 col-md-6 col-lg-3 mb-3">
+          <div class="card text-center shadow">
+            <img src="" alt="" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title text-primary lead">Nombre del personaje</h5>
+              <p id="p1" lead text-secondary>Human</p>
+              <p id="p2">Tierra de origen</p>
+            </div>
           </div>
-        </div>
-      </article>
-    </template>
-
-
-
-</div>
+        </article>
+      </template>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
