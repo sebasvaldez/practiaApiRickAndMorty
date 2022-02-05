@@ -1,0 +1,11 @@
+/* body{
+    background: rgb(226, 226, 226);
+} */
+
+.carousel-item img {
+    height: 330px;
+}
+
+#imgPeticion{
+    background: rgb(36, 40, 47);
+}
