@@ -16,6 +16,15 @@
   <body>
     <h1 class="text-center my-5">API Rick and Morty</h1>
 
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Launch demo modal
+    </button>
+
     <section class="container my-5" id="carousel-dinamico">
       <div
         id="carouselExampleControls"
@@ -56,12 +65,9 @@
         </button>
       </div>
     </section>
-    
-    <div id="imgPeticion" class=" my-5 ">
 
+    <div id="imgPeticion" class="my-5">
       <div class="container py-5">
-
-
         <!-- Spinner cargando -->
         <section class="d-flex align-items-center d-none" id="loading">
           <strong>Cargando...</strong>
@@ -72,23 +78,54 @@
           ></div>
         </section>
 
+        <section class="row" id="card-dinamicas"></section>
 
-        <section class="row" id="card-dinamicas">
-  
-        </section>
+        >
       </div>
 
       <template id="template-card">
         <article class="col-12 col-md-6 col-lg-3 mb-3">
-          <div class="card text-center shadow">
+          <div id="card" class="card text-center shadow">
             <img src="" alt="" class="card-img-top" />
             <div class="card-body">
-              <h5 class="card-title text-primary lead">Nombre del personaje</h5>
+              <a href="">
+                <h5 class="card-title lead">Nombre del personaje</h5>
+              </a>
               <p id="p1" lead text-secondary>Human</p>
               <p id="p2">Tierra de origen</p>
             </div>
           </div>
         </article>
+      </template>
+
+      <template id="template-Modal">
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <d
+        iv
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">...</div>
+              <div class="modal-footer"></div>
+            </div>
+          </div>
+        </div>
       </template>
     </div>
 

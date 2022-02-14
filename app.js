@@ -9,9 +9,8 @@ const fetchData = async () => {
     loadingData(true);
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data.results)
+    console.log(data.results);
     pintarCard(data);
-  
   } catch (error) {
     console.log(error);
   } finally {
@@ -28,12 +27,33 @@ const pintarCard = (data) => {
     clone.querySelector("h5").textContent = item.name;
     clone.getElementById("p1").textContent = item.species;
     clone.getElementById("p2").textContent = item.origin.name;
+
     clone.querySelector(".card-img-top").setAttribute("src", item.image);
+    clone.getElementById("card").addEventListener("click", () => {
+      console.log(item.name);
+      // pintaModal(item);
+    });
+
     //guardamos en el fragment para evitar el reflow
     fragment.appendChild(clone);
   });
 
   cards.appendChild(fragment);
+};
+
+const pintaModal = (item) => {
+  const modalDinamico = document.getElementById("modal-dinamico");
+  const templateModal = document.getElementById("template-Modal").content;
+  const fragment = document.createDocumentFragment();
+  console.log(templateModal)
+  const clone = templateModal.cloneNode(true);
+  clone.querySelector(".modal").setAttribute("id","exampleModal")
+  clone.getElementById("exampleModalLabel").textContent = item.name;
+
+ 
+
+  fragment.appendChild(clone);
+  modalDinamico.appendChild(fragment);
 };
 
 const loadingData = (estado) => {
@@ -45,9 +65,5 @@ const loadingData = (estado) => {
     loading.classList.add("d-none");
   }
 };
-
-
-
-
 
 fetchData();
