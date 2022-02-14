@@ -31,7 +31,8 @@ const pintarCard = (data) => {
     clone.querySelector(".card-img-top").setAttribute("src", item.image);
     clone.getElementById("card").addEventListener("click", () => {
       console.log(item.name);
-      // pintaModal(item);
+      pintaModal(item);
+      
     });
 
     //guardamos en el fragment para evitar el reflow
@@ -47,13 +48,14 @@ const pintaModal = (item) => {
   const fragment = document.createDocumentFragment();
   console.log(templateModal)
   const clone = templateModal.cloneNode(true);
-  clone.querySelector(".modal").setAttribute("id","exampleModal")
-  clone.getElementById("exampleModalLabel").textContent = item.name;
+  
+  clone.getElementById("nameChar").textContent = item.name;
+  clone.getElementById("aditionalInfo").textContent = item.status;
 
- 
-
+  
   fragment.appendChild(clone);
   modalDinamico.appendChild(fragment);
+  
 };
 
 const loadingData = (estado) => {

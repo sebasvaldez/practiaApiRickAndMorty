@@ -20,7 +20,7 @@
       type="button"
       class="btn btn-primary"
       data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
+      data-bs-target="#myModal"
     >
       Launch demo modal
     </button>
@@ -79,6 +79,7 @@
         </section>
 
         <section class="row" id="card-dinamicas"></section>
+        <section id="modal-dinamico"></section>
 
         >
       </div>
@@ -86,11 +87,12 @@
       <template id="template-card">
         <article class="col-12 col-md-6 col-lg-3 mb-3">
           <div id="card" class="card text-center shadow">
-            <img src="" alt="" class="card-img-top" />
+            <a type="button" href="#! " data-bs-toggle="modal" data-bs-target="#myModal">
+              <img src="" alt="" class="card-img-top" />
+            </a>
             <div class="card-body">
-              <a href="">
-                <h5 class="card-title lead">Nombre del personaje</h5>
-              </a>
+              <h5 class="card-title lead">Nombre del personaje</h5>
+
               <p id="p1" lead text-secondary>Human</p>
               <p id="p2">Tierra de origen</p>
             </div>
@@ -99,21 +101,18 @@
       </template>
 
       <template id="template-Modal">
-        <!-- Button trigger modal -->
-
         <!-- Modal -->
-        <d
-        iv
+        <div
           class="modal fade"
-          id="exampleModal"
+          id="myModal"
           tabindex="-1"
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="myInput"
           aria-hidden="true"
         >
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="nameChar">Nombre Personaje</h5>
                 <button
                   type="button"
                   class="btn-close"
@@ -121,7 +120,7 @@
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body">...</div>
+              <div class="modal-body" id="aditionalInfo">info adicional</div>
               <div class="modal-footer"></div>
             </div>
           </div>
