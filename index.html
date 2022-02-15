@@ -10,20 +10,12 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    
     <link rel="stylesheet" href="styles.css" />
     <title>API Rick&Morty</title>
   </head>
   <body>
     <h1 class="text-center my-5">API Rick and Morty</h1>
-
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#myModal"
-    >
-      Launch demo modal
-    </button>
 
     <section class="container my-5" id="carousel-dinamico">
       <div
@@ -78,16 +70,22 @@
           ></div>
         </section>
 
+        <section class="modal" id="modal-dinamico">
+        </section>
         <section class="row" id="card-dinamicas"></section>
-        <section id="modal-dinamico"></section>
+
+
+          
+
+
 
         >
       </div>
 
       <template id="template-card">
-        <article class="col-12 col-md-6 col-lg-3 mb-3">
-          <div id="card" class="card text-center shadow">
-            <a type="button" href="#! " data-bs-toggle="modal" data-bs-target="#myModal">
+        <article class="col-12 col-md-6 col-lg-3 mb-3 ">
+          <div id="card" class="card text-center shadow ">
+            <a type="button" href="#! ">
               <img src="" alt="" class="card-img-top" />
             </a>
             <div class="card-body">
@@ -100,39 +98,21 @@
         </article>
       </template>
 
-      <template id="template-Modal">
+      <template  id="template-Modal">
         <!-- Modal -->
-        <div
-          class="modal fade"
-          id="myModal"
-          tabindex="-1"
-          aria-labelledby="myInput"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="nameChar">Nombre Personaje</h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body" id="aditionalInfo">info adicional</div>
-              <div class="modal-footer"></div>
-            </div>
-          </div>
+        
+        <div class="modal__container">
+          <h2 id="nameChar" class="modal__title">Nombre del personaje</h2>
+          <img id="imgChar" src="" alt="" />
+          <a href="#" id="cerrarModal" class="modal__close">X</a>
         </div>
       </template>
     </div>
-
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
     <script src="./app.js"></script>
   </body>
 </html>
